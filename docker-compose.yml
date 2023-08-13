@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  analytics-service:
+    build: .
+    restart: always
+    ports:
+        - 8090:8090
+
+  mongodb:
+    image: mongo:6-jammy
+    restart: always
+    ports:
+      - '27017:27017'
+    env_file:
+      - .env
+    volumes:
+      - ./data/mongodb:/data/db
+volumes:
+  dbdata:

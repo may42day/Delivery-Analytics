@@ -1,0 +1,10 @@
+fastapi==0.97.0
+motor==3.1.2
+protobuf==4.23.2
+pydantic==1.10.9
+pytest==7.3.2
+python-dotenv==1.0.0
+starlette==0.27.0
+uvicorn==0.22.0
+grpcio==1.54.2
+grpcio-tools==1.54.2
