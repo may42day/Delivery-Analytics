@@ -8,6 +8,15 @@ app = FastAPI(title="Analytics Service")
 
 app.include_router(v1_api_router)
 
+@app.on_event("startup")
+async def startup():
+    await start_grpc_server()
+
+@app.on_event("shutdown")
+async def shutdown():
+    await stop_grpc_server()
+
+
 if __name__ == "__main__":
     import uvicorn
 
