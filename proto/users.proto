@@ -1,0 +1,15 @@
+syntax="proto3";
+package users;
+
+service Users{
+    rpc SendTokenClaims(TokenClaimsRequest) returns (TokenClaimsResponse);
+}
+
+message TokenClaimsRequest {
+    string token = 1;
+}
+
+message TokenClaimsResponse {
+    string uuid = 1;
+    string role = 2;
+}
