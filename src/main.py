@@ -7,6 +7,7 @@ from utils.grpc import serve_grpc, start_grpc_server, stop_grpc_server
 app = FastAPI(title="Analytics Service")
 
 app.include_router(v1_api_router)
+app.add_middleware(BaseHTTPMiddleware, dispatch=check_token_claims)
 
 @app.on_event("startup")
 async def startup():
